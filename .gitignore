@@ -1,0 +1,35 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+.venv/
+venv/
+ENV/
+
+# Ignore model and adapter weights
+models/
+lora-adapters/*/checkpoint-*/
+lora-adapters/*/adapter_model.safetensors
+lora-adapters/*/optimizer.pt
+lora-adapters/*/rng_state.pth
+lora-adapters/*/scheduler.pt
+lora-adapters/*/trainer_state.json
+lora-adapters/current
+
+# Ignore training outputs and logs
+training-data/*.jsonl
+training-data/*.json
+training-data/*.log
+
+# Ignore Docker and system files
+*.log
+docker-compose.override.yml
+
+# Ignore Jupyter and notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

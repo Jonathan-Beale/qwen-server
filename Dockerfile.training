@@ -1,0 +1,40 @@
+FROM nvidia/cuda:12.1.0-devel-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+# Install Python and system dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    git \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip
+RUN pip3 install --no-cache-dir --upgrade pip
+
+RUN pip3 install --no-cache-dir \
+    torch==2.1.2 \
+    transformers==4.44.0 \
+    peft==0.12.0 \
+    bitsandbytes==0.45.3 \
+    accelerate==0.33.0 \
+    datasets==2.20.0 \
+    trl==0.9.6 \
+    scipy \
+    sentencepiece \
+    protobuf \
+    autoawq==0.2.5
+RUN pip3 install --no-cache-dir --upgrade "pip" && pip3 cache purge && pip3 install --no-cache-dir "numpy<2.0"
+
+# Install flash-attention for faster training (optional but recommended)
+RUN pip3 install --no-cache-dir flash-attn --no-build-isolation || echo "Flash attention installation failed, continuing without it"
+
+WORKDIR /workspace
+
+# Copy training scripts
+COPY training-scripts/ /workspace/
+
+# Set default entrypoint
+ENTRYPOINT ["python3"]

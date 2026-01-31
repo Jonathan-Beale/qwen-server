@@ -1,0 +1,85 @@
+# vLLM Server Configuration
+#
+# IMPORTANT: Training and inference use the same quantization (BitsAndBytes)
+# to ensure consistent model behavior. Do not change quantization settings
+# without retraining the LoRA adapter.
+#
+# WSL2 Compatibility Notes:
+# - --enforce-eager is REQUIRED to avoid hanging during model load
+# - Use ./vllm-server.sh restart instead of docker compose restart
+#   to avoid stale state issues with BitsAndBytes
+#
+# To start:  ./vllm-server.sh start
+# To stop:   ./vllm-server.sh stop
+# To restart: ./vllm-server.sh restart
+
+services:
+  vllm-server:
+    image: vllm/vllm-openai:v0.8.2
+    command:
+      - --model
+      - Qwen/Qwen2-7B-Instruct
+      # Quantization - MUST match training configuration
+      - --quantization
+      - bitsandbytes
+      - --load-format
+      - bitsandbytes
+      # Memory settings
+      - --max-model-len
+      - '2048'
+      - --gpu-memory-utilization
+      - '0.95'
+      - --max-num-seqs
+      - '1'
+      - --max-num-batched-tokens
+      - '8192'
+      # WSL2 compatibility - REQUIRED to prevent hanging
+      - --enforce-eager
+      # LoRA configuration
+      - --enable-lora
+      - --max-lora-rank
+      - '64'
+      - --lora-modules
+      - tool-calling=/lora-adapters/current
+    ports:
+      - 8000:8000
+    volumes:
+      - ./models:/models
+      - ./lora-adapters:/lora-adapters:ro
+      - ./scripts:/workspace/scripts:ro
+    environment:
+      - HF_HOME=/models/.cache
+      - TRANSFORMERS_CACHE=/models/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    profiles:
+      - production
+
+  trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile.training
+    command: train_lora.py
+    working_dir: /workspace
+    volumes:
+      - ./models:/models
+      - ./training-data:/training-data
+      - ./lora-adapters:/lora-adapters
+      - ./training-scripts:/workspace
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - TRANSFORMERS_CACHE=/models/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    profiles:
+      - training
