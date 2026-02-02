@@ -1,6 +1,6 @@
 # Qwen Server
 
-A local OpenAI-compatible LLM inference server for fine-tuned models, optimized for RTX 4070 Ti (12GB VRAM).
+A local OpenAI-compatible LLM inference server for fine-tuned models, optimized for RTX 4070 (12GB VRAM).
 
 ## What This Is
 
@@ -52,7 +52,9 @@ qwen-server is an **LLM inference backend** that:
 
 ## API Usage
 
-The server exposes an OpenAI-compatible API:
+The server exposes an OpenAI-compatible API at `http://localhost:8000`.
+
+### Chat Completions
 
 ```bash
 curl http://localhost:8000/v1/chat/completions \
@@ -67,6 +69,43 @@ curl http://localhost:8000/v1/chat/completions \
     "repetition_penalty": 1.1
   }'
 ```
+
+### Token Counting
+
+Use the `/tokenize` endpoint to count tokens before sending requests. This is useful for staying within context limits:
+
+```bash
+curl http://localhost:8000/tokenize \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "tool-calling",
+    "prompt": "Your text to tokenize"
+  }'
+```
+
+Response:
+```json
+{
+  "count": 5,
+  "max_model_len": 8192,
+  "tokens": [1426, 1467, 311, 47510, 553]
+}
+```
+
+The `max_model_len` field confirms the server's context limit. Use this to:
+- Validate prompt length before sending
+- Trim content to fit within context window
+- Calculate remaining tokens for response generation
+
+### API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/v1/chat/completions` | POST | Chat-style inference |
+| `/v1/completions` | POST | Raw completion inference |
+| `/v1/models` | GET | List available models |
+| `/tokenize` | POST | Count tokens in text |
+| `/health` | GET | Server health check |
 
 ### Available Models
 
@@ -203,7 +242,7 @@ qwen-server/
 |---------|------------|
 | Quantization | BitsAndBytes 4-bit for both |
 | System Prompt | Exact same text |
-| Max Length | 2048 tokens |
+| Max Length | 8192 tokens |
 
 If you change any of these, you must retrain the adapter.
 
@@ -234,9 +273,25 @@ If you change any of these, you must retrain the adapter.
 
 | Metric | Value |
 |--------|-------|
-| Context length | 2048 tokens |
-| Latency | ~1-2s for short responses |
-| VRAM usage | ~11.5GB stable |
+| Context length | 8192 tokens (max supported on 12GB VRAM) |
+| Latency | ~1-2s for short responses, ~8s at full context |
+| VRAM usage | ~10.6GB at full context |
+| GPU | NVIDIA RTX 4070 (12GB) |
+
+### Context Length Testing
+
+The maximum context length was determined by testing increasing values until OOM:
+
+```bash
+# Run the context sweep test
+./scripts/test_context_sweep.sh
+```
+
+Results on RTX 4070 12GB:
+- 8192 tokens: Works (uses ~10.6GB VRAM)
+- 8320+ tokens: Fails to start (OOM)
+
+The test uses Wikipedia content with anonymized subjects to verify the model can utilize the full context window.
 
 ---
 

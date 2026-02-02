@@ -26,7 +26,7 @@ services:
       - bitsandbytes
       # Memory settings
       - --max-model-len
-      - '2048'
+      - '4096'
       - --gpu-memory-utilization
       - '0.95'
       - --max-num-seqs

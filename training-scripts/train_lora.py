@@ -34,51 +34,62 @@ from datasets import Dataset
 # Note: The local AWQ model can't be used for training - AWQ is inference-only
 DEFAULT_MODEL = "Qwen/Qwen2-7B-Instruct"
 
-# Enhanced system prompt for coding agent
-SYSTEM_PROMPT = """You are a coding assistant with access to tools for file operations and command execution.
+# System prompt matching AI-Assistant
+SYSTEM_PROMPT = """You are a helpful AI assistant with tools. Use XML syntax for tool calls:
 
-## Tool Usage
-
-When you need to perform file or command operations, use the following XML format:
-
-```xml
 <tool_call>
-<tool_name>TOOL_NAME</tool_name>
+<tool_name>NAME</tool_name>
 <parameters>
-<param_name>value</param_name>
+<param>value</param>
 </parameters>
 </tool_call>
-```
 
-Available tools:
-- **bash**: Execute shell commands. Parameters: command
-- **read_file**: Read file contents. Parameters: path
-- **write_file**: Create/overwrite files. Parameters: path, content
-- **edit_file**: Edit existing files. Parameters: path, find, replace
-- **list_files**: List directory contents. Parameters: path, pattern
-- **search_files**: Search for text in files. Parameters: pattern, path
-- **summarize**: Create a context summary. Parameters: content
+## RESEARCH WORKFLOW (ALWAYS FOLLOW FOR RESEARCH/ANALYSIS TASKS)
+
+1. **PLAN FIRST** - Use create_plan to break down the task into specific questions
+2. **WEB SEARCH FIRST** - ALWAYS use web_search before answering factual questions
+3. **SAVE FINDINGS** - Use research_note to save each important finding with its source URL
+4. **SEARCH MORE** - Do multiple searches with different queries for comprehensive coverage
+5. **ANALYZE** - Use think_step_by_step to reason through findings
+6. **SYNTHESIZE** - Combine notes into comprehensive answer with specifics and sources
+
+## Planning & Research Tools
+
+| Tool | Use For | Key Parameters |
+|------|---------|----------------|
+| create_plan | Break down complex tasks | title, goal, steps (array) |
+| update_plan_step | Track progress | plan_id, step_number, status, notes |
+| think_step_by_step | Careful reasoning | problem, steps (array), conclusion |
+| compare_options | Evaluate alternatives | title, options, criteria, analysis |
+| scratchpad_write | Save working notes | key, content |
+| scratchpad_read | Retrieve notes | key (optional) |
+| research_note | Save findings with source | topic, content, source, confidence |
+| query_research | Search saved notes | topic, tags |
+
+## Other Tools
+
+**Files**: read_file, write_file, edit_file, list_files, search_files
+**System**: bash, calculator, get_time
+**Web**: web_search (query, num_results), web_fetch (url)
+**Memory**: save_memory, recall, forget, save_fact, query_facts, get_related_facts
+**Reminders**: create_reminder (content, due_at), list_reminders, complete_reminder, delete_reminder
+
+## Web Search Citation Format
+
+When reporting web search results, use inline citations [1] and list sources at the end:
+
+Based on my research, Python 3.12 includes improved error messages [1] and is 5% faster [2].
+
+Sources:
+[1] https://docs.python.org/3.12/whatsnew/
+[2] https://speed.python.org/
 
 ## Guidelines
 
-1. **Break down complex tasks** into steps and announce what you're doing
-2. **Use tools for file/command operations**, answer directly for questions
-3. **Handle errors gracefully** - if something fails, investigate and fix
-4. **Write production-quality code** - no placeholders or TODOs
-5. **After creating files**, summarize what was created
-
-## When to use tools vs answer directly
-
-**Use tools for:**
-- File operations: read, write, edit, list, search
-- Commands: git, pytest, pip, npm, docker, etc.
-- Creating projects or code files
-
-**Answer directly for:**
-- Explanations and definitions
-- Math calculations
-- General knowledge questions
-- Code review comments"""
+- ALWAYS use create_plan for multi-step tasks
+- Do MULTIPLE searches, save notes with research_note, then synthesize
+- Be SPECIFIC - concrete details, not vague summaries
+- Use think_step_by_step when accuracy matters"""
 
 
 def load_training_data(data_path: str) -> List[Dict[str, Any]]:
@@ -204,8 +215,8 @@ def main():
                        help="LoRA rank")
     parser.add_argument('--lora_alpha', type=int, default=32,
                        help="LoRA alpha")
-    parser.add_argument('--max_length', type=int, default=2048,
-                       help="Maximum sequence length (increased for multi-turn)")
+    parser.add_argument('--max_length', type=int, default=8192,
+                       help="Maximum sequence length (matches server max-model-len)")
     parser.add_argument('--gradient_accumulation', type=int, default=4,
                        help="Gradient accumulation steps")
     args = parser.parse_args()
@@ -338,10 +349,10 @@ def main():
         fp16=True,
         logging_steps=10,
         eval_strategy="steps",
-        eval_steps=50,
+        eval_steps=10,
         save_strategy="steps",
-        save_steps=100,
-        save_total_limit=3,
+        save_steps=10,
+        save_total_limit=10,
         load_best_model_at_end=True,
         warmup_steps=50,
         lr_scheduler_type="cosine",

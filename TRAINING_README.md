@@ -143,7 +143,7 @@ python train_lora.py \
   --learning_rate 2e-4 \
   --lora_r 16 \
   --lora_alpha 32 \
-  --max_length 2048
+  --max_length 8192
 ```
 
 | Parameter | Default | Description |
@@ -153,7 +153,7 @@ python train_lora.py \
 | `--learning_rate` | 2e-4 | Learning rate |
 | `--lora_r` | 16 | LoRA rank (8-64) |
 | `--lora_alpha` | 32 | LoRA alpha (usually 2x rank) |
-| `--max_length` | 2048 | Max sequence length |
+| `--max_length` | 8192 | Max sequence length (matches server) |
 
 ---
 
@@ -194,9 +194,26 @@ response = client.post("/v1/chat/completions", json={
 |---------|----------|
 | Quantization | BitsAndBytes 4-bit |
 | System Prompt | Exact same text |
-| Max Length | 2048 tokens |
+| Max Length | 8192 tokens |
 
 **If any of these differ, the model won't work correctly.**
+
+### Token Counting
+
+Use vLLM's `/tokenize` endpoint to validate prompt lengths before sending:
+
+```bash
+curl http://localhost:8000/tokenize \
+  -H "Content-Type: application/json" \
+  -d '{"model": "tool-calling", "prompt": "Your prompt text"}'
+```
+
+Response includes:
+- `count`: Number of tokens in the prompt
+- `max_model_len`: Server's context limit (8192)
+- `tokens`: Array of token IDs
+
+Use this to ensure `prompt_tokens + max_response_tokens <= max_model_len`.
 
 ### Frontend Responsibility
 
@@ -205,6 +222,7 @@ Each frontend must:
 2. Parse tool calls from model responses
 3. Execute tools locally
 4. Format tool results for the model
+5. Track token usage to stay within context limits
 
 ---
 
@@ -223,16 +241,25 @@ Each frontend must:
 - Reduce `--max_length`
 - Reduce `--num_epochs`
 
-### Out of Memory
+### Out of Memory (Training)
 - Reduce `--batch_size` to 1
 - Reduce `--max_length`
 - Increase `--gradient_accumulation`
+
+### Out of Memory (Inference)
+- The maximum `--max-model-len` depends on GPU VRAM
+- Run `./scripts/test_context_sweep.sh` to find your limit
+- RTX 4070 12GB: max 8192 tokens
 
 ---
 
 ## Files Reference
 
 ```
+scripts/
+├── test_max_context.py   # Test model with long context
+└── test_context_sweep.sh # Find max supported context length
+
 training-scripts/
 ├── train_lora.py         # Main training script (edit SYSTEM_PROMPT)
 ├── prepare_datasets.py   # Download public datasets
@@ -242,6 +269,7 @@ training-scripts/
 training-data/
 ├── function-calling-combined.jsonl  # Public dataset (65k)
 ├── function-calling-10pct.jsonl     # 10% sample (6.5k)
+├── context_length_results.json      # Context sweep test results
 └── [your-custom-dataset.jsonl]      # Your training data
 
 lora-adapters/
