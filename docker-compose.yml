@@ -40,7 +40,7 @@ services:
       - --max-lora-rank
       - '64'
       - --lora-modules
-      - tool-calling=/lora-adapters/current
+      - tool-calling=/lora-adapters/tool-calling-20260128-223026
     ports:
       - 8000:8000
     volumes:
