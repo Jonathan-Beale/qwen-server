@@ -1,0 +1,2528 @@
+{
+  "draft-0.5B": {
+    "label": "draft-0.5B",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T15:06:05.499500",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 6.722622780388351,
+        "avg_latency": 0.3247281580042909,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 28.762451723394875,
+        "avg_latency": 3.1343524215044454,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 28.231194215193185,
+        "avg_latency": 1.8492811944961431,
+        "avg_tokens": 53.5,
+        "avg_total_tokens": 78.5
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 43.99034234988969,
+        "avg_latency": 31.413229027501075,
+        "avg_tokens": 1380.5,
+        "avg_total_tokens": 1433.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 29.57657421593219,
+        "avg_latency": 35.83109746650007,
+        "avg_tokens": 1055,
+        "avg_total_tokens": 1114
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 32.73024683563062,
+        "avg_latency": 14.99503036000533,
+        "avg_tokens": 491,
+        "avg_total_tokens": 561
+      }
+    ],
+    "summary": {
+      "short_tps": 21.238756239658805,
+      "long_tps": 35.432387800484165,
+      "overall_tps": 28.335572020071485,
+      "short_latency": 1.7694539246682932,
+      "long_latency": 27.41311895133549
+    }
+  },
+  "baseline": {
+    "label": "baseline",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T15:19:33.903726",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 6.280224828190907,
+        "avg_latency": 1.010892921993218,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 26.907967529987708,
+        "avg_latency": 3.344939100003103,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 24.137008572416054,
+        "avg_latency": 1.1602612049973686,
+        "avg_tokens": 28,
+        "avg_total_tokens": 53
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 26.570367908417744,
+        "avg_latency": 52.215506045999064,
+        "avg_tokens": 1387,
+        "avg_total_tokens": 1440
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 26.509160269300793,
+        "avg_latency": 35.853445550994365,
+        "avg_tokens": 950.5,
+        "avg_total_tokens": 1009.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 26.682933691643566,
+        "avg_latency": 18.191033042494382,
+        "avg_tokens": 485.5,
+        "avg_total_tokens": 555.5
+      }
+    ],
+    "summary": {
+      "short_tps": 19.108400310198224,
+      "long_tps": 26.58748728978737,
+      "overall_tps": 22.847943799992795,
+      "short_latency": 1.8386977423312298,
+      "long_latency": 35.41999487982927
+    }
+  },
+  "ngram": {
+    "label": "ngram",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T15:29:39.956889",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 8.484710069174149,
+        "avg_latency": 1.1160533575020963,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 24.491250194380864,
+        "avg_latency": 3.678831633500522,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 24.156073089628855,
+        "avg_latency": 1.1591309134964831,
+        "avg_tokens": 28,
+        "avg_total_tokens": 53
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 37.88481477339188,
+        "avg_latency": 42.193424891505856,
+        "avg_tokens": 1500,
+        "avg_total_tokens": 1553
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 25.76570599991978,
+        "avg_latency": 37.09983214300155,
+        "avg_tokens": 956,
+        "avg_total_tokens": 1015
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 26.345114144711303,
+        "avg_latency": 17.785403525005677,
+        "avg_tokens": 468.5,
+        "avg_total_tokens": 538.5
+      }
+    ],
+    "summary": {
+      "short_tps": 19.044011117727955,
+      "long_tps": 29.99854497267432,
+      "overall_tps": 24.52127804520114,
+      "short_latency": 1.9846719681663672,
+      "long_latency": 32.3595535198377
+    }
+  },
+  "eagle": {
+    "label": "eagle",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T15:57:23.318216",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.593525531656828,
+        "avg_latency": 1.7258704455016414,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 21.481711944667616,
+        "avg_latency": 4.189723493000201,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 20.272024267694952,
+        "avg_latency": 3.8970159399978,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 27.07709662123747,
+        "avg_latency": 50.076957271994615,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 21.200725301049665,
+        "avg_latency": 51.532487251999555,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 25.47321245882074,
+        "avg_latency": 20.042141455000092,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      }
+    ],
+    "summary": {
+      "short_tps": 15.115753914673132,
+      "long_tps": 24.58367812703596,
+      "overall_tps": 19.849716020854544,
+      "short_latency": 3.270869959499881,
+      "long_latency": 40.55052865966476
+    }
+  },
+  "eagle-k1": {
+    "label": "eagle-k1",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T16:13:58.044091",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.3529132035362337,
+        "avg_latency": 1.804813048496726,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 18.574987549922355,
+        "avg_latency": 4.845467965002172,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 17.192347473799217,
+        "avg_latency": 4.595109124995361,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 19.904614267545725,
+        "avg_latency": 68.09593427449727,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 18.6379709271027,
+        "avg_latency": 58.6170244580062,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 19.376757122377924,
+        "avg_latency": 26.34594186599861,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      }
+    ],
+    "summary": {
+      "short_tps": 13.04008274241927,
+      "long_tps": 19.30644743900878,
+      "overall_tps": 16.173265090714025,
+      "short_latency": 3.748463379498086,
+      "long_latency": 51.01963353283403
+    }
+  },
+  "eagle-k2": {
+    "label": "eagle-k2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T16:19:30.862808",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.4390400223082165,
+        "avg_latency": 1.8704920414966182,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 20.217907528940458,
+        "avg_latency": 4.451524797004822,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 19.417401985696838,
+        "avg_latency": 4.06864056950144,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 24.218499380584568,
+        "avg_latency": 55.966513018000114,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 21.596313488426794,
+        "avg_latency": 50.58780353750626,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 23.351555550713574,
+        "avg_latency": 21.861548854998546,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      }
+    ],
+    "summary": {
+      "short_tps": 14.35811651231517,
+      "long_tps": 23.055456139908312,
+      "overall_tps": 18.706786326111743,
+      "short_latency": 3.4635524693342936,
+      "long_latency": 42.80528847016831
+    }
+  },
+  "eagle-k3": {
+    "label": "eagle-k3",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-08T16:24:50.146541",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.7966204998278705,
+        "avg_latency": 1.3792448025051272,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 21.27318748177084,
+        "avg_latency": 4.231083862003288,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 20.38360681220518,
+        "avg_latency": 3.875681005003571,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 25.7356252662529,
+        "avg_latency": 52.691848272501375,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 21.9650685669275,
+        "avg_latency": 49.73820874499506,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 24.891175322820814,
+        "avg_latency": 20.509868726498098,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      }
+    ],
+    "summary": {
+      "short_tps": 15.151138264601297,
+      "long_tps": 24.197289718667072,
+      "overall_tps": 19.674213991634183,
+      "short_latency": 3.1620032231706623,
+      "long_latency": 40.979975247998176
+    }
+  },
+  "eagle-ft": {
+    "label": "eagle-ft",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T10:14:58.535840",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 0.023962918909695603,
+        "avg_latency": 86.033437965,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 1.4494572913931452,
+        "avg_latency": 68.98272464966794,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 7.720078927706653,
+        "avg_latency": 22.699284275665075,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 11.618716300051695,
+        "avg_latency": 112.8404416379999,
+        "avg_tokens": 1311,
+        "avg_total_tokens": 1364
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 7.828458416090163,
+        "avg_latency": 145.76913697500035,
+        "avg_tokens": 1094,
+        "avg_total_tokens": 1153
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 11.54305723800017,
+        "avg_latency": 44.0961838096664,
+        "avg_tokens": 509,
+        "avg_total_tokens": 579
+      }
+    ],
+    "summary": {
+      "short_tps": 3.0644997126698312,
+      "long_tps": 10.330077318047342,
+      "overall_tps": 6.697288515358586,
+      "short_latency": 59.238482296777676,
+      "long_latency": 100.90192080755556
+    }
+  },
+  "eagle-bnb-ft": {
+    "label": "eagle-bnb-ft",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T15:31:43.439518",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 0.20932214945465574,
+        "avg_latency": 10.140330041666553,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 2.3225190690598687,
+        "avg_latency": 93.91160485466874,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 0.9475854099267539,
+        "avg_latency": 92.58075268266596,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 9.62675765628254,
+        "avg_latency": 139.60621661866267,
+        "avg_tokens": 1311,
+        "avg_total_tokens": 1364
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 10.624058957746568,
+        "avg_latency": 102.97938479966979,
+        "avg_tokens": 1094,
+        "avg_total_tokens": 1153
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 10.573455241293383,
+        "avg_latency": 48.139513164331824,
+        "avg_tokens": 509,
+        "avg_total_tokens": 579
+      }
+    ],
+    "summary": {
+      "short_tps": 1.1598088761470928,
+      "long_tps": 10.274757285107498,
+      "overall_tps": 5.717283080627295,
+      "short_latency": 65.54422919300042,
+      "long_latency": 96.90837152755476
+    }
+  },
+  "eagle-bnb-ft-v2": {
+    "label": "eagle-bnb-ft-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T16:09:39.080327",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.154292007460411,
+        "avg_latency": 0.6340567059960449,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 10.072987580907888,
+        "avg_latency": 8.934787149999465,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 10.86138551662957,
+        "avg_latency": 7.273473524997826,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 11.612611967038985,
+        "avg_latency": 120.55857923899748,
+        "avg_tokens": 1400,
+        "avg_total_tokens": 1453
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 10.730239645521458,
+        "avg_latency": 101.67526877699856,
+        "avg_tokens": 1091,
+        "avg_total_tokens": 1150
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 10.952353184345725,
+        "avg_latency": 46.747944609000115,
+        "avg_tokens": 512,
+        "avg_total_tokens": 582
+      }
+    ],
+    "summary": {
+      "short_tps": 8.029555034999289,
+      "long_tps": 11.098401598968723,
+      "overall_tps": 9.563978316984006,
+      "short_latency": 5.614105793664446,
+      "long_latency": 89.66059754166538
+    }
+  },
+  "eagle-orig-v2": {
+    "label": "eagle-orig-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T16:15:45.559163",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 0.7670400447461754,
+        "avg_latency": 2.6074257969958126,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 21.10576694930288,
+        "avg_latency": 4.264237363000575,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 20.289040277086684,
+        "avg_latency": 3.8937277920049382,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 27.176013620099397,
+        "avg_latency": 51.51601774899609,
+        "avg_tokens": 1400,
+        "avg_total_tokens": 1453
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 21.961995842834995,
+        "avg_latency": 49.67672372800007,
+        "avg_tokens": 1091,
+        "avg_total_tokens": 1150
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 26.61646890045974,
+        "avg_latency": 19.236210555005528,
+        "avg_tokens": 512,
+        "avg_total_tokens": 582
+      }
+    ],
+    "summary": {
+      "short_tps": 14.05394909037858,
+      "long_tps": 25.251492787798043,
+      "overall_tps": 19.65272093908831,
+      "short_latency": 3.5884636506671086,
+      "long_latency": 40.14298401066723
+    }
+  },
+  "eagle-k1-v2": {
+    "label": "eagle-k1-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T16:53:55.573583",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.534495641412216,
+        "avg_latency": 2.18528902250182,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 14.117074918827035,
+        "avg_latency": 6.380951148003078,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 11.481005587215689,
+        "avg_latency": 6.920789602998411,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 10.242194576099868,
+        "avg_latency": 1.4679442150008981,
+        "avg_tokens": 15,
+        "avg_total_tokens": 45
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 11.236212114120605,
+        "avg_latency": 4.719718388998444,
+        "avg_tokens": 53,
+        "avg_total_tokens": 84
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 10.911272930804298,
+        "avg_latency": 1.5846909989995765,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 13.810423442670926,
+        "avg_latency": 25.0556588990039,
+        "avg_tokens": 346,
+        "avg_total_tokens": 389
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 13.163366183293528,
+        "avg_latency": 38.89812121900104,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 14.382184587863806,
+        "avg_latency": 25.27745642550508,
+        "avg_tokens": 363.5,
+        "avg_total_tokens": 419.5
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 13.738144683189365,
+        "avg_latency": 21.038475623998238,
+        "avg_tokens": 287.5,
+        "avg_total_tokens": 351.5
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 14.111980140912502,
+        "avg_latency": 96.08599863350173,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 13.364043653130892,
+        "avg_latency": 81.74917064649708,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 14.139573383196286,
+        "avg_latency": 36.10899683650132,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 13.746517245409379,
+        "avg_latency": 54.78467121099675,
+        "avg_tokens": 753,
+        "avg_total_tokens": 810
+      }
+    ],
+    "summary": {
+      "short_tps": 10.253709294746619,
+      "medium_tps": 13.773529724254406,
+      "long_tps": 13.840528605662264,
+      "overall_tps": 12.284177792010457,
+      "short_latency": 3.8765638960837046,
+      "medium_latency": 27.567428041877065,
+      "long_latency": 67.18220933187422
+    }
+  },
+  "eagle-k2-v2": {
+    "label": "eagle-k2-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T17:06:22.326524",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.099265505929794,
+        "avg_latency": 30.975509211002645,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 19.9165314659106,
+        "avg_latency": 4.518932718499855,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 19.050791480919635,
+        "avg_latency": 4.147212290499738,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 16.596901610280778,
+        "avg_latency": 0.9129263020004146,
+        "avg_tokens": 15,
+        "avg_total_tokens": 45
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 18.594896772733932,
+        "avg_latency": 2.85772525900029,
+        "avg_tokens": 53,
+        "avg_total_tokens": 84
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 21.19276460066326,
+        "avg_latency": 0.8174981595002464,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 27.44981208676082,
+        "avg_latency": 12.609828058997664,
+        "avg_tokens": 346,
+        "avg_total_tokens": 389
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 23.305016293759564,
+        "avg_latency": 21.976668073999463,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 27.103518867843455,
+        "avg_latency": 13.411878473001707,
+        "avg_tokens": 363.5,
+        "avg_total_tokens": 419.5
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 25.66784521268465,
+        "avg_latency": 11.261723426498065,
+        "avg_tokens": 287.5,
+        "avg_total_tokens": 351.5
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 26.403599713035685,
+        "avg_latency": 51.348212625001906,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 22.452220838037157,
+        "avg_latency": 48.69742860500264,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 24.29626283972172,
+        "avg_latency": 21.011673609500576,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 23.9801883543288,
+        "avg_latency": 31.394212544502807,
+        "avg_tokens": 753,
+        "avg_total_tokens": 810
+      }
+    ],
+    "summary": {
+      "short_tps": 16.408525239406334,
+      "medium_tps": 25.88154811526212,
+      "long_tps": 24.28306793628084,
+      "overall_tps": 21.364972545900702,
+      "short_latency": 7.371633990083865,
+      "medium_latency": 14.815024508124225,
+      "long_latency": 38.11288184600198
+    }
+  },
+  "eagle-k10-v2": {
+    "label": "eagle-k10-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T17:17:23.896884",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.2085844480223096,
+        "avg_latency": 1.5620056340012525,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 18.8753588948464,
+        "avg_latency": 4.76812431450162,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 18.263977658660792,
+        "avg_latency": 4.325465971003723,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 16.377864797287753,
+        "avg_latency": 0.9158754274976673,
+        "avg_tokens": 15,
+        "avg_total_tokens": 45
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 15.475606034899187,
+        "avg_latency": 3.4247873745007382,
+        "avg_tokens": 53,
+        "avg_total_tokens": 84
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 25.33699884117606,
+        "avg_latency": 0.6907273339966196,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 28.48676474204082,
+        "avg_latency": 12.146034835001046,
+        "avg_tokens": 346,
+        "avg_total_tokens": 389
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 19.590446755847886,
+        "avg_latency": 26.162981234501785,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 27.682580054432314,
+        "avg_latency": 13.13176946400199,
+        "avg_tokens": 363.5,
+        "avg_total_tokens": 419.5
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 23.32262160069407,
+        "avg_latency": 12.50152902899572,
+        "avg_tokens": 287.5,
+        "avg_total_tokens": 351.5
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 24.57051038104279,
+        "avg_latency": 55.20591172049899,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 19.426912493885006,
+        "avg_latency": 56.23676584450004,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 24.134937705325274,
+        "avg_latency": 21.153450354999222,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 23.361919033198163,
+        "avg_latency": 32.266037731500546,
+        "avg_tokens": 753,
+        "avg_total_tokens": 810
+      }
+    ],
+    "summary": {
+      "short_tps": 16.256398445815417,
+      "medium_tps": 24.770603288253774,
+      "long_tps": 22.873569903362807,
+      "overall_tps": 20.579648817239917,
+      "short_latency": 2.6144976759169367,
+      "medium_latency": 15.985578640625135,
+      "long_latency": 41.2155414128747
+    }
+  },
+  "eagle-k1-v3": {
+    "label": "eagle-k1-v3",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T17:29:08.558246",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 4.219634414130727,
+        "avg_latency": 1.3526844730004086,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 20.226017801984927,
+        "avg_latency": 4.449874283000099,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 18.938116290799453,
+        "avg_latency": 4.171526750000339,
+        "avg_tokens": 79,
+        "avg_total_tokens": 104
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 18.629005518017173,
+        "avg_latency": 0.8054059139976744,
+        "avg_tokens": 15,
+        "avg_total_tokens": 45
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 18.626207976979725,
+        "avg_latency": 2.845459052503429,
+        "avg_tokens": 53,
+        "avg_total_tokens": 84
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 18.839796092683606,
+        "avg_latency": 0.9146012560013332,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 22.19728380059203,
+        "avg_latency": 15.589130631000444,
+        "avg_tokens": 346,
+        "avg_total_tokens": 389
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 20.294912699750256,
+        "avg_latency": 25.229507297499367,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 22.1421693729267,
+        "avg_latency": 16.417599959499057,
+        "avg_tokens": 363.5,
+        "avg_total_tokens": 419.5
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 21.345617125188426,
+        "avg_latency": 13.499564918001852,
+        "avg_tokens": 287.5,
+        "avg_total_tokens": 351.5
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 21.794933272314083,
+        "avg_latency": 62.193705807003425,
+        "avg_tokens": 1355.5,
+        "avg_total_tokens": 1408.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 20.395547085652126,
+        "avg_latency": 53.565613624501566,
+        "avg_tokens": 1092.5,
+        "avg_total_tokens": 1151.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 21.171863215348253,
+        "avg_latency": 24.11216716600029,
+        "avg_tokens": 510.5,
+        "avg_total_tokens": 580.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 21.199557670333785,
+        "avg_latency": 35.533234262002225,
+        "avg_tokens": 753,
+        "avg_total_tokens": 810
+      }
+    ],
+    "summary": {
+      "short_tps": 16.57979634909927,
+      "medium_tps": 21.494995749614354,
+      "long_tps": 21.140475310912063,
+      "overall_tps": 19.287190166907234,
+      "short_latency": 2.423258621417214,
+      "medium_latency": 17.68395070150018,
+      "long_latency": 43.85118021487688
+    }
+  },
+  "baseline-v2": {
+    "label": "baseline-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T17:38:05.714547",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 6.992638310312745,
+        "avg_latency": 0.8077013750007609,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 27.971384124919226,
+        "avg_latency": 3.2178514585029916,
+        "avg_tokens": 90,
+        "avg_total_tokens": 115
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 26.062224918062853,
+        "avg_latency": 1.074353059499117,
+        "avg_tokens": 28,
+        "avg_total_tokens": 53
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 24.450556192271694,
+        "avg_latency": 0.6543948895014182,
+        "avg_tokens": 16,
+        "avg_total_tokens": 46
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 26.508726157278858,
+        "avg_latency": 1.999555523500021,
+        "avg_tokens": 53,
+        "avg_total_tokens": 84
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 23.257978982679894,
+        "avg_latency": 0.7314481169996725,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 27.57990159324588,
+        "avg_latency": 12.546628876501927,
+        "avg_tokens": 346,
+        "avg_total_tokens": 389
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 27.697179935000392,
+        "avg_latency": 18.48695269950258,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 27.00174165564789,
+        "avg_latency": 13.022425608000049,
+        "avg_tokens": 351,
+        "avg_total_tokens": 407
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 28.50359463657584,
+        "avg_latency": 9.191638612999668,
+        "avg_tokens": 262,
+        "avg_total_tokens": 326
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 28.65630805938097,
+        "avg_latency": 48.40905659350028,
+        "avg_tokens": 1387,
+        "avg_total_tokens": 1440
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 28.49262980686786,
+        "avg_latency": 33.36641488650275,
+        "avg_tokens": 950.5,
+        "avg_total_tokens": 1009.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 27.986103816605915,
+        "avg_latency": 17.34548422450098,
+        "avg_tokens": 485.5,
+        "avg_total_tokens": 555.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 28.006762086816956,
+        "avg_latency": 27.31286347549758,
+        "avg_tokens": 765,
+        "avg_total_tokens": 822
+      }
+    ],
+    "summary": {
+      "short_tps": 22.540584780920877,
+      "medium_tps": 27.6956044551175,
+      "long_tps": 28.285450942417924,
+      "overall_tps": 25.654837876833355,
+      "short_latency": 1.414217403833997,
+      "medium_latency": 13.311911449251056,
+      "long_latency": 31.608454795000398
+    }
+  },
+  "awq-baseline": {
+    "label": "awq-baseline",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T21:11:33.497287",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 2.3787486538834552,
+        "avg_latency": 1.9168445240029541,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 4.145885330414874,
+        "avg_latency": 14.74413827600074,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 4.525367079674238,
+        "avg_latency": 9.502984590497363,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 4.1866259250951465,
+        "avg_latency": 30.595313883997733,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 3.611627607942638,
+        "avg_latency": 16.060707556502166,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 3.868487163553839,
+        "avg_latency": 4.396496045501408,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 4.303013733690792,
+        "avg_latency": 86.71695975750117,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 4.458298207471422,
+        "avg_latency": 114.88529707400448,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 6.644441372633846,
+        "avg_latency": 50.77117291849936,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 7.898386504078191,
+        "avg_latency": 31.02251457999955,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 7.907393318125238,
+        "avg_latency": 171.37124099500215,
+        "avg_tokens": 1355,
+        "avg_total_tokens": 1408
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 7.928168499771353,
+        "avg_latency": 129.03368747949935,
+        "avg_tokens": 1023,
+        "avg_total_tokens": 1082
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 7.908891106527317,
+        "avg_latency": 85.2836447515001,
+        "avg_tokens": 674.5,
+        "avg_total_tokens": 744.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 7.884942959713255,
+        "avg_latency": 89.160005310001,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 3.7861236267606984,
+      "medium_tps": 5.826034954468563,
+      "long_tps": 7.907348971034291,
+      "overall_tps": 5.546448390183972,
+      "short_latency": 12.869414146083727,
+      "medium_latency": 70.84898608250114,
+      "long_latency": 118.71214463400065
+    }
+  },
+  "awq-k3": {
+    "label": "awq-k3",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T21:22:42.117287",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 2.7959555679616166,
+        "avg_latency": 1.2364741939964006,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 16.904216899383908,
+        "avg_latency": 3.657786074996693,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 14.532400722163604,
+        "avg_latency": 2.9597776274968055,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 21.57392178822762,
+        "avg_latency": 5.9346852915005,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 17.34555436085551,
+        "avg_latency": 3.346125233500061,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 23.14799217494771,
+        "avg_latency": 0.7367004560001078,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 23.36019192074859,
+        "avg_latency": 15.967507807999937,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 16.623158252723748,
+        "avg_latency": 30.80123080750127,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 22.21949303577252,
+        "avg_latency": 14.725957589005702,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 20.071655086073218,
+        "avg_latency": 12.206976562498312,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 22.790597335163184,
+        "avg_latency": 61.146909482999035,
+        "avg_tokens": 1390.5,
+        "avg_total_tokens": 1443.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 17.598137325623476,
+        "avg_latency": 59.69618850449842,
+        "avg_tokens": 1050.5,
+        "avg_total_tokens": 1109.5
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 19.37768356571784,
+        "avg_latency": 34.79501556949981,
+        "avg_tokens": 674,
+        "avg_total_tokens": 744
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 19.35387266154138,
+        "avg_latency": 36.355081810004776,
+        "avg_tokens": 703.5,
+        "avg_total_tokens": 760.5
+      }
+    ],
+    "summary": {
+      "short_tps": 16.050006918923327,
+      "medium_tps": 20.568624573829517,
+      "long_tps": 19.78007272201147,
+      "overall_tps": 18.406773621207424,
+      "short_latency": 2.978591479581761,
+      "medium_latency": 18.425418191751305,
+      "long_latency": 47.99829884175051
+    }
+  },
+  "awq-k5": {
+    "label": "awq-k5",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T21:31:59.020549",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.625215904949822,
+        "avg_latency": 1.1528493924997747,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 19.879144754878876,
+        "avg_latency": 3.0685595639988605,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 15.516392854985924,
+        "avg_latency": 2.7718199029986863,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 25.44478339777268,
+        "avg_latency": 5.037819551500434,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 18.985907446032304,
+        "avg_latency": 3.055764615000953,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 26.860065605360184,
+        "avg_latency": 0.6351208795022103,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 29.118721834466452,
+        "avg_latency": 12.810027716499462,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 17.622914458076337,
+        "avg_latency": 29.06928199300455,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 25.839783393135953,
+        "avg_latency": 12.663151466498675,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 22.687397064452774,
+        "avg_latency": 10.799244946996623,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 29.121428396944875,
+        "avg_latency": 42.69573268399836,
+        "avg_tokens": 1243.5,
+        "avg_total_tokens": 1296.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 19.845630624413424,
+        "avg_latency": 53.36090728399722,
+        "avg_tokens": 1059,
+        "avg_total_tokens": 1118
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 22.444383646262093,
+        "avg_latency": 30.805716720497003,
+        "avg_tokens": 691.5,
+        "avg_total_tokens": 761.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 22.555334368328396,
+        "avg_latency": 34.07776553599979,
+        "avg_tokens": 770,
+        "avg_total_tokens": 827
+      }
+    ],
+    "summary": {
+      "short_tps": 18.385251660663297,
+      "medium_tps": 23.81720418753288,
+      "long_tps": 23.491694258987195,
+      "overall_tps": 21.396221696432864,
+      "short_latency": 2.6203223175834864,
+      "medium_latency": 16.335426530749828,
+      "long_latency": 40.23503055612309
+    }
+  },
+  "awq-k8": {
+    "label": "awq-k8",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T21:41:57.943549",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 3.235297379676373,
+        "avg_latency": 1.1377079300000332,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 17.016640574194692,
+        "avg_latency": 3.638067501509795,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 14.890162295566327,
+        "avg_latency": 2.8878185790017596,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 27.349078778394663,
+        "avg_latency": 4.6835297095021815,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 18.727110538757373,
+        "avg_latency": 3.097569599500275,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 30.899199435982453,
+        "avg_latency": 0.5578057359962258,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 36.14914226280279,
+        "avg_latency": 10.318368907508557,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 17.101865532001767,
+        "avg_latency": 29.943747050492675,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 30.042680684640196,
+        "avg_latency": 10.890616847500496,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 23.38271200095994,
+        "avg_latency": 10.478711279007257,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 34.44515120842049,
+        "avg_latency": 36.09792851450038,
+        "avg_tokens": 1243.5,
+        "avg_total_tokens": 1296.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 20.310483131364265,
+        "avg_latency": 52.1397553554998,
+        "avg_tokens": 1059,
+        "avg_total_tokens": 1118
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 25.008220501650136,
+        "avg_latency": 27.68728320900118,
+        "avg_tokens": 691.5,
+        "avg_total_tokens": 761.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 11.513648388429456,
+        "avg_latency": 68.68498505099706,
+        "avg_tokens": 770,
+        "avg_total_tokens": 827
+      }
+    ],
+    "summary": {
+      "short_tps": 18.686248167095314,
+      "medium_tps": 26.669100120101174,
+      "long_tps": 22.819375807466088,
+      "overall_tps": 22.14795662234578,
+      "short_latency": 2.6670831759183784,
+      "medium_latency": 15.407861021127246,
+      "long_latency": 46.152488032499605
+    }
+  },
+  "awq-baseline-v2": {
+    "label": "awq-baseline-v2",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T22:23:50.011134",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 4.517424816500939,
+        "avg_latency": 0.537187592999544,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 8.320088319431687,
+        "avg_latency": 7.331839581330617,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 8.194931268490597,
+        "avg_latency": 5.247170913668621,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 8.183810632302976,
+        "avg_latency": 15.655856884332024,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 8.025184605622846,
+        "avg_latency": 7.235101927328894,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 6.597234720965317,
+        "avg_latency": 2.870174314661805,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 4.961027540001858,
+        "avg_latency": 77.59661325266158,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 6.372450564928905,
+        "avg_latency": 80.64479835366849,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 6.905008624711752,
+        "avg_latency": 47.41499390200382,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 7.652978632374348,
+        "avg_latency": 32.716349612994236,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 8.438578543456964,
+        "avg_latency": 157.6445884716668,
+        "avg_tokens": 1330.3333333333333,
+        "avg_total_tokens": 1383.3333333333333
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 8.477138250288009,
+        "avg_latency": 120.67753171399818,
+        "avg_tokens": 1023,
+        "avg_total_tokens": 1082
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 8.468104775402885,
+        "avg_latency": 79.75039734000165,
+        "avg_tokens": 675.3333333333334,
+        "avg_total_tokens": 745.3333333333334
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 4.612052059683717,
+        "avg_latency": 153.90454069800035,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 7.30644572721906,
+      "medium_tps": 6.472866340504216,
+      "long_tps": 7.498968407207894,
+      "overall_tps": 7.123286668154486,
+      "short_latency": 6.479555202386917,
+      "medium_latency": 59.593188780332035,
+      "long_latency": 127.99426455591674
+    }
+  },
+  "awq-marlin-baseline": {
+    "label": "awq-marlin-baseline",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T22:28:16.247624",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 15.841568286700271,
+        "avg_latency": 0.259695747003813,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 84.86829266335944,
+        "avg_latency": 0.719291134000135,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 86.8927035853268,
+        "avg_latency": 0.4948638063360704,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 88.92090280925864,
+        "avg_latency": 1.4394831063351983,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 87.39379191568885,
+        "avg_latency": 0.6636639906597944,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 74.80469419010458,
+        "avg_latency": 0.2327190089999931,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 89.43788522361308,
+        "avg_latency": 4.170494581664873,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 89.57466128412621,
+        "avg_latency": 5.715905743001106,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 89.365880621296,
+        "avg_latency": 3.65911517633261,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 89.23400289417482,
+        "avg_latency": 2.745597091333669,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 89.34179859498782,
+        "avg_latency": 14.297114930668613,
+        "avg_tokens": 1277.3333333333333,
+        "avg_total_tokens": 1330.3333333333333
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 89.40343752809655,
+        "avg_latency": 11.196444416661203,
+        "avg_tokens": 1001,
+        "avg_total_tokens": 1060
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 89.41796438452356,
+        "avg_latency": 9.684857999333568,
+        "avg_tokens": 866,
+        "avg_total_tokens": 936
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 89.46903827019422,
+        "avg_latency": 7.861197326667025,
+        "avg_tokens": 703.3333333333334,
+        "avg_total_tokens": 760.3333333333334
+      }
+    ],
+    "summary": {
+      "short_tps": 73.1203255750731,
+      "medium_tps": 89.40310750580252,
+      "long_tps": 89.40805969445054,
+      "overall_tps": 82.42618730367506,
+      "short_latency": 0.6349527988891673,
+      "medium_latency": 4.0727781480830645,
+      "long_latency": 10.759903668332601
+    }
+  },
+  "awq-marlin-k3": {
+    "label": "awq-marlin-k3",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T22:31:50.632075",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 4.680108136642144,
+        "avg_latency": 1.0684380845050327,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 82.63547148233476,
+        "avg_latency": 0.7382258419966092,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 57.279457607600804,
+        "avg_latency": 0.7507054550005705,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 89.20846908136194,
+        "avg_latency": 1.4348723055009032,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 73.73955852618099,
+        "avg_latency": 0.786555168000632,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 72.54763194222507,
+        "avg_latency": 0.24751924949669046,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 95.74177317106171,
+        "avg_latency": 3.900643950495578,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 70.5140382465704,
+        "avg_latency": 7.260971770498145,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 95.4765614775985,
+        "avg_latency": 3.424941774501349,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 84.29778110307834,
+        "avg_latency": 2.9069088930045837,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 99.65683655210825,
+        "avg_latency": 12.532669702501153,
+        "avg_tokens": 1249,
+        "avg_total_tokens": 1302
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 79.00100943357083,
+        "avg_latency": 14.638944852500572,
+        "avg_tokens": 1158,
+        "avg_total_tokens": 1217
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 82.58988080368931,
+        "avg_latency": 8.948264295999252,
+        "avg_tokens": 739,
+        "avg_total_tokens": 809
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 85.17388816892823,
+        "avg_latency": 8.253830481502519,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 63.34844946272428,
+      "medium_tps": 86.50753849957724,
+      "long_tps": 86.60540373957416,
+      "overall_tps": 76.61017612378224,
+      "short_latency": 0.837719350750073,
+      "medium_latency": 4.373366597124914,
+      "long_latency": 11.093427333125874
+    }
+  },
+  "awq-marlin-k5": {
+    "label": "awq-marlin-k5",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T22:35:59.788670",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 4.996418927705417,
+        "avg_latency": 1.0985854399987147,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 54.45966099074031,
+        "avg_latency": 1.120174567498907,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 44.282320380746704,
+        "avg_latency": 0.9710421655036043,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 72.46302331289507,
+        "avg_latency": 1.7666299565025838,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 54.27202824325313,
+        "avg_latency": 1.0689163679999183,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 58.6007411071073,
+        "avg_latency": 0.3170508820039686,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 82.55533176853353,
+        "avg_latency": 4.518372523998551,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 50.96847647144178,
+        "avg_latency": 10.045845003507566,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 75.7859006593712,
+        "avg_latency": 4.3159352314978605,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 61.334838688754544,
+        "avg_latency": 3.997178765501303,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 84.81653564384906,
+        "avg_latency": 15.043710475001717,
+        "avg_tokens": 1275.5,
+        "avg_total_tokens": 1328.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 53.70157561300189,
+        "avg_latency": 18.41945657400356,
+        "avg_tokens": 989,
+        "avg_total_tokens": 1048
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 64.0501814478114,
+        "avg_latency": 11.538063775500632,
+        "avg_tokens": 739,
+        "avg_total_tokens": 809
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 64.38589535424184,
+        "avg_latency": 10.918561760990997,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 48.17903216040799,
+      "medium_tps": 67.66113689702526,
+      "long_tps": 66.73854701472605,
+      "overall_tps": 59.04806632924666,
+      "short_latency": 1.0570665632512828,
+      "medium_latency": 5.71933288112632,
+      "long_latency": 13.979948146374227
+    }
+  },
+  "awq-marlin-k1": {
+    "label": "awq-marlin-k1",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T22:39:09.586782",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 6.094471834764291,
+        "avg_latency": 0.9508183964935597,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 96.62153856146321,
+        "avg_latency": 0.6314537545040366,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 92.59822853444427,
+        "avg_latency": 0.4643947445001686,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 103.53121062127465,
+        "avg_latency": 1.236353942003916,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 97.41250022841314,
+        "avg_latency": 0.5954221525098546,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 74.0477760802538,
+        "avg_latency": 0.25926423799683107,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 104.09651244588113,
+        "avg_latency": 3.583425406999595,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 94.0433853595182,
+        "avg_latency": 5.445014094999351,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 104.37026885230627,
+        "avg_latency": 3.1332408510061214,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 98.24264496249846,
+        "avg_latency": 2.494327044507372,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 104.19091738489213,
+        "avg_latency": 12.24191869400238,
+        "avg_tokens": 1275.5,
+        "avg_total_tokens": 1328.5
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 94.343605362534,
+        "avg_latency": 10.480179079000663,
+        "avg_tokens": 989,
+        "avg_total_tokens": 1048
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 99.59648917473898,
+        "avg_latency": 7.420017420001386,
+        "avg_tokens": 739,
+        "avg_total_tokens": 809
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 100.16214230879974,
+        "avg_latency": 7.01864494199981,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 78.38428764343556,
+      "medium_tps": 100.18820290505101,
+      "long_tps": 99.57328855774122,
+      "overall_tps": 90.66797797941302,
+      "short_latency": 0.6896178713347277,
+      "medium_latency": 3.66400184937811,
+      "long_latency": 9.29019003375106
+    }
+  },
+  "awq-marlin-eagle-k3": {
+    "label": "awq-marlin-eagle-k3",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T23:10:05.880795",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 5.866724835351927,
+        "avg_latency": 0.9286267860079533,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 64.40376589638285,
+        "avg_latency": 0.9473173180012964,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 67.18059874039238,
+        "avg_latency": 0.6400731650064699,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 87.22037357356403,
+        "avg_latency": 1.4675528530060546,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 70.00703588568666,
+        "avg_latency": 0.8285611245009932,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 81.29663033081586,
+        "avg_latency": 0.21727617050055414,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 103.00463589430902,
+        "avg_latency": 3.621291873503651,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 84.24471038282513,
+        "avg_latency": 6.077743978006765,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 97.37932317328033,
+        "avg_latency": 3.3580061399989063,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 94.83846976682176,
+        "avg_latency": 2.5834785745028057,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 99.32329767524402,
+        "avg_latency": 12.89730482800951,
+        "avg_tokens": 1281,
+        "avg_total_tokens": 1334
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 82.49848716061297,
+        "avg_latency": 12.400229399994714,
+        "avg_tokens": 1023,
+        "avg_total_tokens": 1082
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 82.77120401982637,
+        "avg_latency": 9.680216084008862,
+        "avg_tokens": 802.5,
+        "avg_total_tokens": 872.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 82.17107087968148,
+        "avg_latency": 8.555680739991658,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 62.66252154369895,
+      "medium_tps": 94.86678480430906,
+      "long_tps": 86.69101493384122,
+      "overall_tps": 78.72902344391392,
+      "short_latency": 0.838234569503887,
+      "medium_latency": 3.910130141503032,
+      "long_latency": 10.883357763001186
+    }
+  },
+  "awq-marlin-eagle-k5": {
+    "label": "awq-marlin-eagle-k5",
+    "url": "http://localhost:8000",
+    "timestamp": "2026-04-09T23:14:03.061804",
+    "short": [
+      {
+        "prompt": "What is the capital of France?",
+        "avg_tps": 9.18216695501914,
+        "avg_latency": 0.9730082574969856,
+        "avg_tokens": 2,
+        "avg_total_tokens": 28
+      },
+      {
+        "prompt": "Name the three primary colors.",
+        "avg_tps": 52.295381468369484,
+        "avg_latency": 1.1664745244997903,
+        "avg_tokens": 61,
+        "avg_total_tokens": 86
+      },
+      {
+        "prompt": "What does HTTP stand for?",
+        "avg_tps": 53.62643305762249,
+        "avg_latency": 0.8018518660028349,
+        "avg_tokens": 43,
+        "avg_total_tokens": 68
+      },
+      {
+        "prompt": "What is the time complexity of quicksort on average?",
+        "avg_tps": 74.47219992621002,
+        "avg_latency": 1.7187640019983519,
+        "avg_tokens": 128,
+        "avg_total_tokens": 158
+      },
+      {
+        "prompt": "Explain the difference between TCP and UDP in two sentences.",
+        "avg_tps": 57.8576146861781,
+        "avg_latency": 1.002462305004883,
+        "avg_tokens": 58,
+        "avg_total_tokens": 89
+      },
+      {
+        "prompt": "What is the boiling point of water at sea level in Celsius?",
+        "avg_tps": 84.48338218907799,
+        "avg_latency": 0.2066944730031537,
+        "avg_tokens": 17,
+        "avg_total_tokens": 49
+      }
+    ],
+    "medium": [
+      {
+        "prompt": "Write a Python function that takes a list of integers and returns a new list wit",
+        "avg_tps": 90.14079652142668,
+        "avg_latency": 4.1379712729976745,
+        "avg_tokens": 373,
+        "avg_total_tokens": 416
+      },
+      {
+        "prompt": "Explain how garbage collection works in Python. Cover reference counting, the cy",
+        "avg_tps": 68.81935334381099,
+        "avg_latency": 7.439812806500413,
+        "avg_tokens": 512,
+        "avg_total_tokens": 554
+      },
+      {
+        "prompt": "Write a SQL query to find the top 5 customers by total order value from tables `",
+        "avg_tps": 89.9824900975834,
+        "avg_latency": 3.634487850504229,
+        "avg_tokens": 327,
+        "avg_total_tokens": 383
+      },
+      {
+        "prompt": "Debug this Python code and explain the fix:\ndef flatten(lst):\n    result = []\n  ",
+        "avg_tps": 84.413439039748,
+        "avg_latency": 2.902384028500819,
+        "avg_tokens": 245,
+        "avg_total_tokens": 309
+      }
+    ],
+    "long": [
+      {
+        "prompt": "Write a complete Python implementation of a red-black tree with insert, delete, ",
+        "avg_tps": 86.26981688296172,
+        "avg_latency": 14.848863593506394,
+        "avg_tokens": 1281,
+        "avg_total_tokens": 1334
+      },
+      {
+        "prompt": "Write a detailed technical explanation of how the transformer attention mechanis",
+        "avg_tps": 67.4532971753518,
+        "avg_latency": 15.166522407496814,
+        "avg_tokens": 1023,
+        "avg_total_tokens": 1082
+      },
+      {
+        "prompt": "Implement a complete HTTP/1.1 server in Python using only the standard library. ",
+        "avg_tps": 70.42790961857008,
+        "avg_latency": 11.377988414998981,
+        "avg_tokens": 802.5,
+        "avg_total_tokens": 872.5
+      },
+      {
+        "prompt": "Write a comprehensive guide to async/await in Python. Cover the event loop, coro",
+        "avg_tps": 72.48174977206061,
+        "avg_latency": 9.698994977494294,
+        "avg_tokens": 703,
+        "avg_total_tokens": 760
+      }
+    ],
+    "summary": {
+      "short_tps": 55.319529713746206,
+      "medium_tps": 83.33901975064227,
+      "long_tps": 74.15819336223606,
+      "overall_tps": 68.70757362385646,
+      "short_latency": 0.9782092380009999,
+      "medium_latency": 4.528663989625784,
+      "long_latency": 12.77309234837412
+    }
+  }
+}

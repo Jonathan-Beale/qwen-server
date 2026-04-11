@@ -267,6 +267,8 @@ def main():
         quantization_config=bnb_config,
         device_map="auto",
         trust_remote_code=True,
+        low_cpu_mem_usage=True,
+        torch_dtype=torch.bfloat16,
     )
 
     # Prepare model for k-bit training
@@ -346,13 +348,15 @@ def main():
         per_device_eval_batch_size=args.batch_size,
         gradient_accumulation_steps=args.gradient_accumulation,
         learning_rate=args.learning_rate,
-        fp16=True,
+        bf16=True,
+        fp16=False,
+        optim="paged_adamw_8bit",
         logging_steps=10,
         eval_strategy="steps",
-        eval_steps=10,
+        eval_steps=50,
         save_strategy="steps",
-        save_steps=10,
-        save_total_limit=10,
+        save_steps=50,
+        save_total_limit=2,
         load_best_model_at_end=True,
         warmup_steps=50,
         lr_scheduler_type="cosine",

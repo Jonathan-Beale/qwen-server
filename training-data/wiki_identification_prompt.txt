@@ -1,7 +1,0 @@
-Excerpt:
-
-This individual was born in the German Empire in 1879 and later moved to Switzerland, where they acquired citizenship. They made groundbreaking contributions to theoretical physics, including the development of the theory of relativity and the famous equation relating mass and energy. In 1921, they received the Nobel Prize in Physics for their work on the photoelectric effect. Their career included positions at major European institutions and a move to the United States in the 1930s. Many scientific concepts and even an element are named after them. In 1999, they were named Time's Person of the Century.
-
-Prompt:
-
-Based on the excerpt above, identify the subject of this article.

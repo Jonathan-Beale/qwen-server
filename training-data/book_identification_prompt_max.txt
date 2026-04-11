@@ -1,7 +1,0 @@
-You are a literary expert. Given the following excerpt, identify the book and author:
-
-<excerpt>
-REPEAT_TEXT_HERE
-</excerpt>
-
-What is the title and author?

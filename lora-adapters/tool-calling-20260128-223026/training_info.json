@@ -1,9 +1,0 @@
-{
-  "model_name": "Qwen/Qwen2-7B-Instruct",
-  "data_path": "/training-data/tool-calling-synthetic.jsonl",
-  "num_examples": 500,
-  "num_epochs": 5,
-  "lora_r": 16,
-  "lora_alpha": 32,
-  "timestamp": "2026-01-28T23:01:47.713493"
-}
