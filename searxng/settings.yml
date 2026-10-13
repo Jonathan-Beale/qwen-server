@@ -1,0 +1,12 @@
+# SearXNG: local metasearch backend for the agent's web_search tool.
+# Only reachable on 127.0.0.1 (see docker-compose.yml).
+use_default_settings: true
+
+server:
+  limiter: false        # single local client; no bot protection needed
+  image_proxy: false
+
+search:
+  formats:              # the agent needs the JSON API, which is off by default
+    - html
+    - json

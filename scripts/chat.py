@@ -7,7 +7,7 @@ import urllib.request
 from collections import deque
 
 URL = "http://localhost:8000/v1/chat/completions"
-MODEL = "dpo"  # LoRA adapter name (base: Qwen2-7B-Instruct-AWQ + DPO adapter)
+MODEL = "qwen"  # served model name (see docker-compose.yml)
 MAX_HISTORY = 20  # rolling window (pairs of user+assistant turns)
 
 
@@ -15,14 +15,13 @@ def stream_chat(history: list) -> str:
     payload = json.dumps({
         "model": MODEL,
         "messages": history,
-        "temperature": 0.7,
         "stream": True,
     }).encode()
 
     req = urllib.request.Request(URL, data=payload,
                                  headers={"Content-Type": "application/json"})
     collected = []
-    with urllib.request.urlopen(req, timeout=120) as resp:
+    with urllib.request.urlopen(req, timeout=3600) as resp:
         for raw_line in resp:
             line = raw_line.decode().strip()
             if not line.startswith("data:"):
