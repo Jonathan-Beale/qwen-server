@@ -39,6 +39,8 @@
                text-overflow: ellipsis; white-space: nowrap; }
   #workspace b { color: var(--text); font-weight: 500; }
 
+  #autoLabel { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); cursor: pointer; }
+  #autoLabel.on { color: var(--warn); font-weight: 600; }
   #banner { padding: 8px 16px; background: var(--panel); border-bottom: 1px solid var(--line);
             color: var(--bad); font-size: 13px; white-space: pre-wrap; }
   main { flex: 1; overflow-y: auto; padding: 20px 16px; }
@@ -79,6 +81,8 @@
   <h1>Qwen</h1>
   <div id="status"><span class="dot" id="dot"></span><span id="statusText">Connecting</span></div>
   <div id="workspace"></div>
+  <label id="autoLabel" title="Write files and run commands without asking each time. Commands run as you and are not sandboxed.">
+    <input type="checkbox" id="auto"> Auto-allow</label>
   <button id="changeWs" title="Choose the folder the assistant can read and edit">Change folder</button>
   <button id="newChat">New chat</button>
   <button id="quit" title="Stop the agent and its connection to the server">Quit</button>
@@ -149,7 +153,7 @@ function summarize(name, args) {
 const handlers = {
   reset(e) {
     log.innerHTML = '<div id="empty">Ask a question, or ask for a change in the workspace folder.</div>';
-    current = null; tools = {}; setBusy(false);
+    current = null; tools = {}; setBusy(false); setAuto(e.auto);
     $("workspace").innerHTML = "Folder: <b></b> on " + esc(e.host);
     $("workspace").querySelector("b").textContent = e.workspace;
     $("workspace").title = e.workspace;
@@ -213,7 +217,13 @@ const handlers = {
   notice(e) { note(e.text); },
   error(e) { note(e.text, "error"); refreshStatus(); },
   busy(e) { setBusy(e.value); },
+  auto(e) { setAuto(e.value); },
 };
+
+function setAuto(value) {
+  $("auto").checked = value;
+  $("autoLabel").classList.toggle("on", value);
+}
 
 function setBusy(value) {
   busy = value;
@@ -252,6 +262,7 @@ async function refreshStatus() {
 }
 
 $("send").onclick = send;
+$("auto").onchange = () => post("/api/auto", {value: $("auto").checked});
 $("stop").onclick = () => post("/api/stop");
 $("newChat").onclick = () => post("/api/clear");
 $("changeWs").onclick = async () => {

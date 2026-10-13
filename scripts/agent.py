@@ -634,7 +634,7 @@ class WebApp:
 
     def info(self) -> dict:
         return {"model": self.args.model, "workspace": str(self.agent.tools.workspace),
-                "shell": SHELL, "host": platform.node()}
+                "shell": SHELL, "host": platform.node(), "auto": self.agent.auto_approve}
 
     def status(self) -> dict:
         def reachable(url):
@@ -701,10 +701,22 @@ class WebApp:
             self.emit(type="busy", value=False)
 
     def decide(self, uid: str, decision: str):
+        if decision == "always":
+            return self.set_auto(True)
         waiter = self.pending.get(uid)
-        if waiter and decision in ("yes", "no", "always"):
+        if waiter and decision in ("yes", "no"):
             waiter[1] = decision
             waiter[0].set()
+
+    def set_auto(self, value: bool):
+        """Turn auto-allow on or off. Remembered across chats and launches."""
+        self.args.yes = self.agent.auto_approve = value
+        save_config(auto_allow=value or None)
+        self.emit(type="auto", value=value)
+        if value:
+            for waiter in list(self.pending.values()):
+                waiter[1] = "yes"
+                waiter[0].set()
 
     def clear(self, workspace: str | None = None) -> str | None:
         """Start a new conversation, optionally in another workspace. Returns an error message."""
@@ -821,6 +833,8 @@ def make_handler(app: WebApp):
                 error = None if app.send(str(body.get("text", ""))) else "Busy."
             elif path == "/api/approve":
                 app.decide(str(body.get("id")), str(body.get("decision")))
+            elif path == "/api/auto":
+                app.set_auto(body.get("value") is True)
             elif path == "/api/stop":
                 app.agent.stop()
             elif path == "/api/clear":
@@ -869,6 +883,7 @@ def make_handler(app: WebApp):
 
 
 def run_web(args, tunnel_error: str | None):
+    args.yes = args.yes or bool(load_config().get("auto_allow"))
     app = WebApp(args, tunnel_error)
     try:
         server = ThreadingHTTPServer(("127.0.0.1", args.port), make_handler(app))

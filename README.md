@@ -78,7 +78,7 @@ Running it (or double-clicking it) opens a browser UI served on `127.0.0.1` only
 
 The workspace is the folder the assistant works in. On the server it defaults to this repository, so the model can read and change its own setup. Change it with **Change folder** in the UI (remembered in `~/.qwen-agent.json`) or `--workspace path`.
 
-File tools are confined to the workspace. `run_command` is not sandboxed: it runs as your user. The agent asks before every write and command unless you choose **Always allow** or pass `--yes`.
+File tools are confined to the workspace. `run_command` is not sandboxed: it runs as your user. The agent asks before every write and command unless you tick **Auto-allow** in the UI (remembered across launches; **Always allow** on a request turns it on) or pass `--yes`.
 
 The UI keeps running after you close the tab so the next launch is instant; **Quit** stops it and closes the tunnel.
 
