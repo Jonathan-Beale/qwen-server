@@ -255,8 +255,18 @@ $("send").onclick = send;
 $("stop").onclick = () => post("/api/stop");
 $("newChat").onclick = () => post("/api/clear");
 $("changeWs").onclick = async () => {
-  const path = window.prompt("Folder the assistant can read and edit (starts a new chat):", $("workspace").title);
-  if (path) await post("/api/workspace", {path});
+  // The agent opens the desktop's folder chooser; a browser cannot report a folder's path itself.
+  $("changeWs").disabled = true;
+  let data = {};
+  try {
+    const res = await fetch("/api/pick-folder", {method: "POST", headers: {"X-Token": token}, body: "{}"});
+    data = await res.json();
+    if (data.error) note(data.error, "error");
+  } finally { $("changeWs").disabled = busy; }
+  if (data.unavailable) {
+    const path = window.prompt("Folder the assistant can read and edit (starts a new chat):", $("workspace").title);
+    if (path) await post("/api/workspace", {path});
+  }
 };
 $("quit").onclick = async () => {
   await post("/api/quit");

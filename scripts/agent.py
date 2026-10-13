@@ -724,6 +724,59 @@ class WebApp:
         return None
 
 
+FOLDER_DIALOG_TITLE = "Folder the assistant can read and edit"
+TK_PICKER = """
+import sys
+try:
+    import tkinter
+    from tkinter import filedialog
+except ImportError:
+    sys.exit(3)
+root = tkinter.Tk()
+root.withdraw()
+root.attributes("-topmost", True)
+sys.stdout.write(filedialog.askdirectory(initialdir=sys.argv[1], title=sys.argv[2], mustexist=True) or "")
+"""
+
+
+def pick_folder(initial: str) -> str | None:
+    """Show the desktop's own folder chooser. Returns the path, "" if cancelled, None if there is no chooser."""
+    def run(argv):
+        try:
+            proc = subprocess.run(argv, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                                  stdin=subprocess.DEVNULL, creationflags=NO_WINDOW,
+                                  env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+        except OSError:
+            return None
+        return proc
+
+    # pythonw has no stdout to report the choice on, so use the console python next to it
+    python = Path(sys.executable).with_name("python.exe") if WINDOWS else Path(sys.executable)
+    proc = run([str(python if python.exists() else sys.executable), "-c", TK_PICKER, initial, FOLDER_DIALOG_TITLE])
+    if proc and proc.returncode == 0:
+        return proc.stdout.strip()
+
+    if WINDOWS:
+        script = ("Add-Type -AssemblyName System.Windows.Forms; "
+                  "$d = New-Object System.Windows.Forms.FolderBrowserDialog; "
+                  f"$d.Description = '{FOLDER_DIALOG_TITLE}'; $d.SelectedPath = $env:QWEN_INITIAL_DIR; "
+                  "if ($d.ShowDialog() -eq 'OK') { [Console]::OutputEncoding = [Text.Encoding]::UTF8; $d.SelectedPath }")
+        os.environ["QWEN_INITIAL_DIR"] = initial
+        candidates = [["powershell", "-NoProfile", "-STA", "-Command", script]]
+    elif sys.platform == "darwin":
+        candidates = [["osascript", "-e", f'POSIX path of (choose folder with prompt "{FOLDER_DIALOG_TITLE}")']]
+    else:
+        candidates = [["zenity", "--file-selection", "--directory", f"--title={FOLDER_DIALOG_TITLE}",
+                       f"--filename={initial}/"],
+                      ["kdialog", "--getexistingdirectory", initial, "--title", FOLDER_DIALOG_TITLE]]
+    for argv in candidates:
+        if shutil.which(argv[0]):
+            proc = run(argv)
+            if proc is not None:  # a non-zero exit here means the dialog was cancelled
+                return proc.stdout.strip() if proc.returncode == 0 else ""
+    return None
+
+
 def make_handler(app: WebApp):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
@@ -774,6 +827,14 @@ def make_handler(app: WebApp):
                 error = app.clear()
             elif path == "/api/workspace":
                 error = app.clear(str(body.get("path", "")))
+            elif path == "/api/pick-folder":
+                if app.busy:
+                    error = "Stop the current reply first."
+                else:
+                    chosen = pick_folder(str(app.agent.tools.workspace))
+                    if chosen is None:  # no native dialog here; the page asks for a typed path instead
+                        return self._reply(200, {"unavailable": True})
+                    error = app.clear(chosen) if chosen else None
             elif path == "/api/quit":
                 app.agent.stop()
                 app.quit.set()
