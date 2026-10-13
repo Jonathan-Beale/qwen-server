@@ -31,7 +31,7 @@ On the server:
 ```bash
 ./vllm-server.sh start          # vLLM + SearXNG; first load takes several minutes
 ./vllm-server.sh test           # tool calling + web search smoke test
-python3 scripts/agent.py --ui   # chat in the browser (omit --ui for a terminal chat)
+python3 scripts/agent.py        # chat in the browser (--terminal for a terminal chat)
 ./vllm-server.sh status
 ./vllm-server.sh logs
 ./vllm-server.sh stop
@@ -74,7 +74,7 @@ Both installers set up a passwordless SSH key if there isn't one (asking for the
 | `write_file`, `edit_file` | Modify files in the workspace |
 | `run_command` | Run a shell command in the workspace (bash; PowerShell on Windows) |
 
-`--ui` opens a browser UI served on `127.0.0.1` only; without it you get a terminal chat. `--ssh user@server` opens the tunnel to the server for the session.
+Running it (or double-clicking it) opens a browser UI served on `127.0.0.1` only; `--terminal` gives a terminal chat instead. `--ssh user@server` opens a tunnel to the server for the session and is remembered, so after one run with it a plain launch connects the same way (`--ssh none` forgets it).
 
 The workspace is the folder the assistant works in. On the server it defaults to this repository, so the model can read and change its own setup. Change it with **Change folder** in the UI (remembered in `~/.qwen-agent.json`) or `--workspace path`.
 
@@ -127,7 +127,7 @@ qwen-server/
 │   └── install.sh            # Client installer, Linux / macOS
 ├── scripts/
 │   ├── agent.py              # Chat agent with web + coding tools
-│   ├── agent_ui.html         # Browser UI served by agent.py --ui
+│   ├── agent_ui.html         # Browser UI served by agent.py
 │   ├── chat.py               # Plain chat
 │   └── host-setup.sh         # One-time host prerequisites
 ├── training-scripts/         # Legacy LoRA training pipeline

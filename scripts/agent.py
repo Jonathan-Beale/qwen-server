@@ -6,9 +6,9 @@ and run shell commands inside a workspace directory. Tools run on the machine
 this script runs on; the model can be local or reached over an SSH tunnel.
 
 Usage:
-    python3 scripts/agent.py                        # terminal chat, workspace = this repo
-    python3 scripts/agent.py --ui                   # browser UI
-    python3 scripts/agent.py --ui --ssh user@host   # browser UI, model on another machine
+    python3 scripts/agent.py                        # browser UI (also what double-clicking does)
+    python3 scripts/agent.py --ssh user@host        # model on another machine; remembered for next time
+    python3 scripts/agent.py --terminal             # chat in the terminal instead
     python3 scripts/agent.py --workspace ~/proj     # work on another project
     python3 scripts/agent.py --yes                  # don't ask before writes/commands
 
@@ -133,7 +133,12 @@ def default_workspace() -> str:
         return saved
     if (REPO_ROOT / "vllm-server.sh").exists():
         return str(REPO_ROOT)
-    return str(Path.cwd())
+    if Path.cwd().resolve() != SCRIPT_DIR:
+        return str(Path.cwd())
+    # Double-clicked: don't hand the model the folder the script itself lives in.
+    fallback = Path.home() / "qwen-workspace"
+    fallback.mkdir(exist_ok=True)
+    return str(fallback)
 
 
 class _TextExtractor(HTMLParser):
@@ -874,9 +879,11 @@ def open_tunnel(target: str, ports: list[int]):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--ui", action="store_true", help="Open the browser UI instead of the terminal chat")
+    parser.add_argument("--terminal", action="store_true", help="Chat in the terminal instead of the browser UI")
+    parser.add_argument("--ui", action="store_true", help=argparse.SUPPRESS)  # the default; kept for old launchers
     parser.add_argument("--ssh", metavar="USER@HOST",
-                        help="Reach the model and search servers on another machine through an SSH tunnel")
+                        help="Reach the model and search servers on another machine through an SSH tunnel "
+                             "(remembered; pass --ssh none to forget)")
     parser.add_argument("--url", default=DEFAULT_URL, help=f"OpenAI-compatible base URL (default: {DEFAULT_URL})")
     parser.add_argument("--model", default=DEFAULT_MODEL, help=f"Served model name (default: {DEFAULT_MODEL})")
     parser.add_argument("--workspace",
@@ -890,11 +897,19 @@ def main():
     parser.add_argument("--no-browser", action="store_true",
                         help="Fetch pages over plain HTTP even if a headless Brave/Chromium is installed")
     parser.add_argument("--port", type=int, default=8765, help="Port for the browser UI (default: 8765)")
-    parser.add_argument("--no-open", action="store_true", help="With --ui, don't open a browser window")
+    parser.add_argument("--no-open", action="store_true", help="Don't open a browser window for the UI")
     args = parser.parse_args()
     args.workspace = args.workspace or default_workspace()
     if not Path(args.workspace).is_dir():
         sys.exit(f"workspace is not a directory: {args.workspace}")
+    args.ui = not args.terminal
+    if args.ssh == "none":
+        args.ssh = None
+        save_config(ssh=None)
+    elif args.ssh:
+        save_config(ssh=args.ssh)
+    else:
+        args.ssh = load_config().get("ssh")
     if args.ui and reopen_running_ui(args):
         return
 

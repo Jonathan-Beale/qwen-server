@@ -246,7 +246,8 @@ async function refreshStatus() {
   text.textContent = s.model ? (s.search ? "Connected" : "Connected, web search offline") : "Model server unreachable";
   const problem = s.model ? "" : (s.tunnel_error
     || (s.ssh ? "The SSH tunnel to " + s.ssh + " is open but the model server is not answering. Is it running?"
-              : "Nothing is answering on the model server port. Start it with ./vllm-server.sh start"));
+              : "Nothing is answering on the model server port. On the server, start it with ./vllm-server.sh start. "
+                + "On another machine, run this once so it knows where the server is: python agent.py --ssh user@server"));
   banner.textContent = problem; banner.hidden = !problem;
 }
 
